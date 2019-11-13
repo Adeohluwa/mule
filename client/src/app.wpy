@@ -58,7 +58,11 @@ wepy.app({
 <config>
 {
     pages: [
-      'pages/index'
+      'pages/index',
+      'pages/sendpackage'
+      'pages/deliverpackage',
+      'pages/reviews'
+
     ],
     window: {
       backgroundTextStyle: 'light',
