@@ -1,30 +1,33 @@
 import norm/postgres
 
-db("localhost","ade","s7x8c6h9sixteen","mule"):
+db("localhost","ade","thiskeys7x8c6h9isverylong","mule"):     
   type
-    UserSchema = object
+    UserSchema* = object
       name: string
       avatar: string
       phone: string
       origin: string
       destination: string
       booked: bool
-      switch: string 
+      online: bool 
+      verified: bool
       earnings: float
       savings: float
-    
-    Feedback = object
+      country: string
+
+  type 
+    Feedback* = object
       name: string
       rating: int
       comment: string 
-    
-    Package = object
+
+  type 
+    Package* = object
       name: string
       photo: string
       weight: string
 
-withDb:
-  try:
+   
+when isMainModule:
+  withDb:
     createTables()
-  except:
-    echo "table already exists..."

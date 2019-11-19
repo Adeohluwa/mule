@@ -1,9 +1,8 @@
-include "../models/db.nim"
+#import ../models/users
 import strformat, math, json, sugar
 
-
-
-proc bookUser*(user: string): JsonNode =
+#[
+proc bookUser*(): JsonNode =
   withDb:
     var user = UserSchema.getOne(
       cond = &"name='{user}'"
@@ -32,22 +31,22 @@ proc onlineUsers*(): JsonNode =
     )
     %*online
 
+]#
 
+proc deliverPackage*(): JsonNode =
+  %*"{key:value}"
+  #withDb:
+   # var mule  = UserSchema(
+    #  name: request.body[user],
+    #  origin: request.body[origin],
+    #  destination: request.body[destination],
+    #  online: true
+    #)
+    #mule.insert()
+    #%*mule
 
-proc deliverPackage*(user,origin, destination: string): JsonNode =
-  withDb:
-    var mule  = UserSchema(
-      name: user,
-      origin: origin,
-      destination: destination,
-      switch: "on"
-    )
-    mule.insert()
-    %*mule
-
-
-
-proc sendPackage*(user,origin,destination: string): JsonNode =
+#[
+proc sendPackage*(): JsonNode =
   withDb:
     var users: seq[UserSchema] = @[]
     let online = UserSchema.getMany(
@@ -62,7 +61,7 @@ proc sendPackage*(user,origin,destination: string): JsonNode =
 
 
 
-proc getReview*(user: string): JsonNode =
+proc getReview*(): JsonNode =
   withDb:
     var reviews = Feedback.getMany(
       10000,
@@ -74,11 +73,11 @@ proc getReview*(user: string): JsonNode =
 
 
 
-proc leaveReview*(user,review,comment: string): JsonNode =
+proc leaveReview*(): JsonNode =
   withDb:
     var newReview  = Feedback(
       name: user,
-      rating: parseInt(review),
+      rating: review,
       comment: comment
     )
     newReview.insert()
@@ -86,7 +85,7 @@ proc leaveReview*(user,review,comment: string): JsonNode =
 
 
 
-proc displayPhone*(user: string): JsonNode =
+proc displayPhone*(): JsonNode =
   withDb:
     var user = UserSchema.getOne(
       cond = &"name='{user}'"
@@ -95,7 +94,7 @@ proc displayPhone*(user: string): JsonNode =
 
 
 
-proc cancelBooking*(user: string): JsonNode =
+proc cancelBooking*(): JsonNode =
   withDb:
     var tmp = UserSchema.getOne(
       cond = &"name='{user}'"
@@ -117,4 +116,4 @@ proc totalSaved*(): JsonNode =
   %*"/dp working"
 
 proc referFriends*(): JsonNode =
-  %*"/dp working"
+  %*"/dp working"]#
