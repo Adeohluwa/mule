@@ -6,10 +6,14 @@ services:
     depends_on:
       - db
     ports:
-      - "5000:80"
+      - "5000:5000"
   db:
     image: postgres
-    #environment:
-    #  db:
-    #  user:
-    #  pass:
+    environment:
+      POSTGRES_DB=mule:
+      POSTGRES_USER=ade:
+      POSTGRES_PASSWORD=s7x8c6h9:
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
