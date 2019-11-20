@@ -15,6 +15,6 @@ requires "nim >= 1.0.2", "jester", "norm >= 1.0.16"
 
 # Tasks
 
-task demodb, "Create DB tables and populate them with demo data":
+task createdb, "Create DB tables from user defined types":
   exec "nim c -r src/models/models.nim"
   rmFile "src/models/models".toExe()
