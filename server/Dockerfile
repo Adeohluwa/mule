@@ -1,4 +1,4 @@
 FROM nimlang/nim:onbuild
 ENTRYPOINT ["./bin/app"]
 
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY src/nginx/nginx.conf /etc/nginx/nginx.conf
