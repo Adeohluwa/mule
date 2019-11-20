@@ -1,29 +1,31 @@
-import jester, re
+import jester
 
-router api:
-  extend deliverPackage, "/dp"
+
+router endPoints:
   
- #[  
-    of "/sp":
-      resp sendPackage()
+  post "/dp/?@user/@origin/@destination":
+    resp "works" 
+
+  post "/sp":
+      resp "works"
    
-    of "/lr":
-      resp leaveReview()
+  post "/lr":
+      resp "works"
 
-    of "/gr":
-      resp getReview()
+  post "/gr":
+      resp "work"
 
-    of "/dph":
-      resp displayPhone()
+  post "/dph":
+      resp "works"
 
-    of "/cb":
-      resp cancelBooking()
+  post "/cb":
+      resp "works"
 
-    of "/cd":
-      resp confirmDelivery()
+  post "/cd":
+      resp "works"
 
-    of "/bu":
-      resp bookUser()
+  post "/bu":
+      resp "works"
 
-    of "/rf":
-      resp referFriends()]#
+  post "/rf":
+      resp "works"
