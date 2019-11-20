@@ -1,12 +1,7 @@
-import jester,
-  re
+import jester
+import routes/api
 
-router endPoints:
-  post re"^\/api/?":
-    resp $request.path
-  
+routes:
+  extend endPoints, "/api"
 
-
-when isMainModule:
-  var app = initJester(endPoints)
-  app.serve()
+runForever()
