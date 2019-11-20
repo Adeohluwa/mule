@@ -1,1 +1,4 @@
 # Mule
+
+
+$ docker-compose up
