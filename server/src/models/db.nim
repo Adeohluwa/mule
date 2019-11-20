@@ -9,22 +9,12 @@ template `~`(arg: untyped)  =
 
 ~ UserSchema
 
-#[
-expandMacros:
-  db("localhost", "ade", "thiskeys7x8c6h9isverylong", "mule"):
-
-    type 
-      Human = object
-        name: string
-        age: int
-]#
-
-#[db("localhost", "ade", "thiskeys7x8c6h9isverylong", "mule"):
-  ~ UserSchema
-  ~ Feedback
-  ~ Package
+#[dbConn("localhost", "ade", "thiskeys7x8c6h9isverylong", "mule"):
+#  ~ UserSchema
+#  ~ Feedback
+#  ~ Package
 
     
-when isMainModule:
-  withDb:
-    createTables()]#
+#when isMainModule:
+#  withDb:
+#    createTables()]#
