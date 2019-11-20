@@ -23,5 +23,6 @@ db("localhost","ade","thiskeys7x8c6h9isverylong","mule"):
       photo: string
       weight: string
 
-withDb:
-  createTables()
+when isMainModule:
+  withDb:
+    createTables()
