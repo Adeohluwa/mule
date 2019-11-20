@@ -1,4 +1,4 @@
-#import ../models/users
+import ../models/userschema
 import strformat, math, json, sugar
 
 #[
@@ -34,7 +34,7 @@ proc onlineUsers*(): JsonNode =
 ]#
 
 proc deliverPackage*(): JsonNode =
-  %*"{key:value}"
+  %*"working"
   #withDb:
    # var mule  = UserSchema(
     #  name: request.body[user],
@@ -116,4 +116,5 @@ proc totalSaved*(): JsonNode =
   %*"/dp working"
 
 proc referFriends*(): JsonNode =
-  %*"/dp working"]#
+  %*"/dp working"
+]#
