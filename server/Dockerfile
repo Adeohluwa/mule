@@ -1,2 +1,2 @@
 FROM nimlang/nim:onbuild
-ENTRYPOINT ["./bin/app"]
+ENTRYPOINT ["./bin/app.service"]
