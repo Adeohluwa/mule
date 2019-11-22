@@ -1,2 +1,5 @@
 FROM nimlang/nim:onbuild
-ENTRYPOINT ["./bin/app.service"]
+RUN rm /etc/nginx/conf.d/*
+COPY src/nginx/proxy.conf /etc/nginx/conf.d/
+ENTRYPOINT ["./bin/app"]
+
