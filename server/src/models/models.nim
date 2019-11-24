@@ -2,7 +2,7 @@ import norm/postgres
 
 db("localhost","ade","thiskeys7x8c6h9isverylong","mule"):
   type
-    UserSchema = object
+    UserProfile = object
       name: string
       avatar: string
       phone: string
@@ -13,7 +13,7 @@ db("localhost","ade","thiskeys7x8c6h9isverylong","mule"):
       earnings: float
       savings: float
     
-    Feedback = object
+    Review = object
       name: string
       rating: int
       comment: string 
@@ -22,6 +22,11 @@ db("localhost","ade","thiskeys7x8c6h9isverylong","mule"):
       name: string
       photo: string
       weight: string
+
+    Suggestions = object
+      phone: string
+      comment: string
+
 
 when isMainModule:
   withDb:
