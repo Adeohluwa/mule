@@ -2,35 +2,46 @@ import jester
 import controllers
 
 router endPoints:
-
-  post "/user":
-    # /create           -- create user  
-    resp createUser()
-  
-  get "/users":
-    # /online           -- get online users
+  ## /user
+  post "/user/create":
     resp "works"
+  get "/user/online":
+    resp "works"
+ 
 
-  post "/package":
-    # /send             -- send package
-    # /deliver          -- deliver package
-    resp "works" 
 
+  ## /package
+  post "/package/send":
+    resp "works"
+  post "/package/deliver":
+    resp "works"
+ 
+
+
+  ## /review
+  get "/review/":
+    resp "works"
   post "/review":
-    # /get              -- get review
-    # /create           -- create review
-      resp "works"
+    resp "works"
    
-  post "/booking":
-    # /create           -- create booking 
-    # /cancel           -- cancel booking
+ 
+
+  ## /booking
+  post "/booking/create":
+    resp "works"
+  post "/booking/cancel":
     resp "works"
 
-  post "/contact":
-    # /phone            -- display phone
+ 
+
+  ## /contact
+  get "/contact":
     resp "works"
 
-  post "/delivery":
-    # /track            -- track delivery
-    # /confirm          -- confirm delivery
+
+
+  ## /delivery
+  get "/delivery/track":
+    resp "works"
+  post "/delivery/confirm" 
     resp "works"
