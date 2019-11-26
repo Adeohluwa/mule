@@ -1,10 +1,16 @@
 import jester
-import controllers
+import ../controllers/users
+
 
 router endPoints:
   ## /user
   post "/user/create":
-    resp "works"
+    let u = request.params["user"]
+    let p = request.params["pass"]
+    resp createUser("ade", "pass")
+
+
+
   get "/user/online":
     resp "works"
  
@@ -43,5 +49,5 @@ router endPoints:
   ## /delivery
   get "/delivery/track":
     resp "works"
-  post "/delivery/confirm" 
+  post "/delivery/confirm":
     resp "works"
