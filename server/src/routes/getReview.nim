@@ -1,8 +1,0 @@
-proc getReview*(): JsonNode =
-  var reviews = Feedback.getMany(
-    10000,
-      cond= &"name='{user}'"
-    )
-    var revs = lc[each.rating | (each <- reviews),int]
-    var avg = sum(revs) / len(revs)
-    %*avg

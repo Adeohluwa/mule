@@ -1,2 +1,0 @@
-proc trackDelivery(): JsonNode =
-  "working"
