@@ -2,8 +2,9 @@ import norm/postgres
 
 db("localhost","ade","thiskeys7x8c6h9isverylong","mule"):
   type
-    UserProfile = object
+    UserProfile* = object
       name: string
+      pass: string
       avatar: string
       phone: string
       origin: string
@@ -13,17 +14,17 @@ db("localhost","ade","thiskeys7x8c6h9isverylong","mule"):
       earnings: float
       savings: float
     
-    Review = object
+    Review* = object
       name: string
       rating: int
       comment: string 
     
-    Package = object
+    Package* = object
       name: string
       photo: string
       weight: string
 
-    Suggestions = object
+    Suggestions* = object
       phone: string
       comment: string
 
