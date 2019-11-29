@@ -1,10 +1,9 @@
 import jester
 import routes/api
 
-routes:
-  get "/":
-    resp("works!")
 
+routes:
   extend endPoints, "/api"
+
 
 runForever()
