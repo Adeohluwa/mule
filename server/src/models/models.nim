@@ -1,6 +1,17 @@
+import os
 import norm/postgres
+import dotenv
 
-db("localhost","ade","thiskeys7x8c6h9isverylong","mule"):
+let env  = initDotEnv()
+env.load()
+
+let host = getEnv("host")
+let dbname = getEnv("db")
+let username = getEnv("user")
+let password = getEnv("pass")
+
+
+db(host,username,password,dbname):
   type
     UserProfile* = object
       name: string
