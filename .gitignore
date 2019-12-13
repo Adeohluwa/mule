@@ -1,2 +1,3 @@
 bin/app
 src/models/.env
+src/models/models
