@@ -1,5 +1,2 @@
-client/node_modules
-client/weapp
-server/app
-dist
-.DS_Store
+bin/app
+models/.env
