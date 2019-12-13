@@ -1,2 +1,2 @@
 bin/app
-models/.env
+src/models/.env
